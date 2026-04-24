@@ -136,6 +136,11 @@
     border-radius: 8px;
     padding: 24px;
   }
+  .intro-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
   .context-box h3 {
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--teal);
@@ -149,6 +154,46 @@
   .context-box li::before {
     content: '→';
     color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+  .lidar-callout {
+    background: var(--cream);
+    border: 1px solid var(--gray-mid);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .lidar-callout h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .lidar-callout p {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    line-height: 1.65;
+  }
+
+  /* ── ABOUT PRODUCT ── */
+  .product-section {
+    background: var(--cream);
+    padding: 46px 40px;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .product-inner { max-width: 820px; margin: 0 auto; }
+  .product-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .product-copy {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.75;
+    max-width: 760px;
   }
 
   /* ── SCORECARD ── */
@@ -212,6 +257,39 @@
   .bar-fill {
     height: 100%; border-radius: 4px; background: var(--score-bar);
     transition: width 1s ease;
+  }
+
+  /* ── PILOT QUOTE ── */
+  .testimonial-section {
+    background: var(--cream);
+    padding: 8px 40px 56px;
+  }
+  .testimonial-inner { max-width: 820px; margin: 0 auto; }
+  .testimonial-box {
+    background: var(--white);
+    border: 1px solid var(--gray-mid);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+  }
+  .testimonial-box .quote-mark {
+    color: rgba(26,46,68,0.25);
+  }
+  .testimonial-text {
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.75;
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+  }
+  .testimonial-sig {
+    margin-top: 18px;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
   }
 
   /* ── EVALUATOR NOTE ── */
@@ -354,6 +432,17 @@
   </div>
 </section>
 
+<!-- ABOUT PRODUCT -->
+<section class="product-section">
+  <div class="product-inner">
+    <div class="section-header product-header">
+      <div class="section-eyebrow">About the Product</div>
+      <h2>P.A.L.S.™ — Pet Awareness for Living Safely</h2>
+    </div>
+    <p class="product-copy">P.A.L.S. is a LiDAR-based safety system for older adults who live at home with pets. It detects falls and pet-related trip hazards in real time, alerts designated care partners, and operates entirely without cameras or cloud storage. Designed by a gerontologist with fifteen years of direct practice across hospice, memory support, and assisted living, P.A.L.S. centers the human-animal bond as a source of strength — protecting independence rather than replacing it.</p>
+  </div>
+</section>
+
 <!-- INTRO -->
 <section class="intro-section">
   <div class="intro-inner">
@@ -361,15 +450,21 @@
       <h2>What This Case Study Demonstrates</h2>
       <p>P.A.L.S.™ is evaluated here using the Dignity-Centered AI Evaluation Framework (DCAEF) v2.0 — a six-pillar standard developed by The Gerontechnology Group to assess whether an AI or technology product genuinely serves older adults with dignity, safety, and equity. This evaluation shows what a real DCAEF assessment produces: a structured scorecard, narrative findings, evaluator transparency, and a clear development roadmap.</p>
     </div>
-    <div class="context-box">
-      <h3>About P.A.L.S.™</h3>
-      <ul>
-        <li>Uses LiDAR sensing and edge processing to detect falls and pet-related trip hazards — without cameras</li>
-        <li>No video, no images — full privacy preservation in the home</li>
-        <li>Older adult as the primary agent; care partner as the informed support</li>
-        <li>Grounded in peer-reviewed gerontological research on pet companionship and aging in place</li>
-        <li>Developed by The Gerontechnology Group · Houston, TX</li>
-      </ul>
+    <div class="intro-side">
+      <div class="context-box">
+        <h3>About P.A.L.S.™</h3>
+        <ul>
+          <li>Keeps older adults safer at home by detecting falls and pet-related trip hazards in real time</li>
+          <li>Uses LiDAR sensing with on-device processing — no cameras, no video, no cloud</li>
+          <li>Designed with the older adult as the primary agent; care partners stay informed, never in control</li>
+          <li>Grounded in peer-reviewed gerontological research on pet companionship and aging in place</li>
+          <li>Developed by The Gerontechnology Group · Houston, TX</li>
+        </ul>
+      </div>
+      <div class="lidar-callout">
+        <h4>What is LiDAR?</h4>
+        <p>LiDAR uses safe, invisible light pulses to map a room in three dimensions — sensing where people, pets, and furniture are without cameras or video. Think of it as spatial awareness without surveillance.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -459,12 +554,23 @@
   </div>
 </section>
 
+<!-- PILOT TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="testimonial-box">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">"[PLACEHOLDER — Mippy to replace with actual quote from a pilot participant. Suggested length: 2-3 sentences. Quote should speak to safety, dignity, trust, or the human-animal bond experience.]"</p>
+      <p class="testimonial-sig">— [First name], [role: Pilot Participant / Care Partner / Older Adult User], [City/State or anonymized region]</p>
+    </div>
+  </div>
+</section>
+
 <!-- EVALUATOR NOTE -->
 <section class="evaluator-section">
   <div class="evaluator-inner">
     <div class="section-header">
-      <div class="section-eyebrow">Evaluator Transparency Note</div>
-      <h2>Conflict of Interest Disclosure</h2>
+      <div class="section-eyebrow">Evaluator Transparency</div>
+      <h2>A Note on Self-Evaluation</h2>
     </div>
     <div class="evaluator-box">
       <div class="quote-mark">"</div>
